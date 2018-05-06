@@ -1,22 +1,27 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import RegisterComponent from '@/components/RegisterComponent';
-import LoginComponent from '@/components/LoginComponent';
+import AppHero from '@/components/AppHero';
+import AppRegister from '@/components/AppRegister';
+import AppLogin from '@/components/AppLogin';
 
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
   routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: AppHero,
+    },
     {
       path: '/register',
       name: 'Register',
-      component: RegisterComponent,
+      component: AppRegister,
     },
     {
       path: '/login',
       name: 'Login',
-      component: LoginComponent,
+      component: AppLogin,
     },
   ],
 });
