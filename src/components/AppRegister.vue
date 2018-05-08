@@ -23,7 +23,7 @@
   </div>
   <button
     type="submit"
-    class="btn btn-primary"
+    class="btn btn-dark"
     @click="register"
     >
     Submit

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="bar">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-primary ">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
       <div class="container-fluid">
         <div class="nav-header">
           <a class="navbar-brand" href="/">SHOWCASE</a>

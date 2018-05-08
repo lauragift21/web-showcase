@@ -1,20 +1,33 @@
 <template>
   <div class="form">
-    <form action="/action_page.php">
+    <form action="#" method="post">
       <div class="form-group">
         <label for="email">Email address:</label>
-        <input type="email" class="form-control" id="email" required>
+        <input
+          type="email"
+          autocomplete="on"
+          class="form-control"
+          id="email"
+          required>
       </div>
       <div class="form-group">
         <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="pwd" required>
+        <input
+          type="password"
+          autocomplete="off"
+          class="form-control"
+          id="pwd"
+          required>
       </div>
       <div class="form-group form-check">
         <label class="form-check-label">
-          <input class="form-check-input" type="checkbox"> Remember me
+          <input
+            class="form-check-input"
+            type="checkbox">
+            Remember me
         </label>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-dark">Submit</button>
     </form>
   </div>
 </template>
