@@ -46,20 +46,23 @@ export default {
   },
   methods: {
     register() {
+      const url = 'https://mt-proc.herokuapp.com/register';
       const auth = {
         headers: { Authorization: 'Bearer {localStorage.token}' }
       };
+      console.log(this.email);
+      console.log(this.password);
       axios
         .post(
-          'https://mt-proc.herokuapp.com/register',
+          url,
           {
             body: [this.email, this.password]
           },
           auth
         )
         .then(() => {})
-        .catch((e) => {
-          this.error.push(e);
+        .catch((error) => {
+          console.log(error);
         });
     }
   }
