@@ -56,7 +56,10 @@ export default {
         .post(
           url,
           {
-            body: [this.email, this.password]
+            body: {
+              email: this.email,
+              password: this.password
+            }
           },
           auth
         )
