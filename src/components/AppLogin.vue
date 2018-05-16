@@ -2,11 +2,16 @@
   <div>
     <form method="post" @submit.prevent="login" class="form">
       <div class="form-group">
+      <div class="alert alert-success alert-dismissible fade show" v-if="success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <b>Login successful!</b>
+      </div>
         <label for="email">Email address:</label>
         <input
           type="email"
           autocomplete="on"
           class="form-control"
+          v-model="email"
           id="email"
           name="email"
           v-validate="'required|email'">
@@ -22,6 +27,7 @@
           type="password"
           autocomplete="off"
           class="form-control"
+          v-model="password"
           id="pwd"
           name="password"
           v-validate="'max:9'">
@@ -64,28 +70,28 @@ export default {
   },
   methods: {
     login() {
+      this.success = true;
       const url = 'https://mt-proc.herokuapp.com/login';
-      const auth = {
-        headers: { Authorization: 'Bearer {localStorage.token}' }
-      };
+      console.log(this.password);
+      console.log(this.email);
       axios
         .post(
           url,
           {
             email: this.email,
             password: this.password
-          },
-          auth
-        )
-        .then(() => {})
+          })
+        .then((response) => {
+          console.log(response);
+        })
         .catch((error) => {
           console.error(error);
         });
+      this.$router.replace(this.$route.query.redirect || '/websites');
     }
   }
 };
 </script>
-
 
 <style scoped>
 .form {

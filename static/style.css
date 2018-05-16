@@ -1,0 +1,10 @@
+@media only screen and ( max-width: 600px) {
+  .form {
+    width: 95%;
+    margin: 10px;
+  }
+  .header {
+    width: 100%;
+  }
+}
+

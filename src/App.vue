@@ -14,8 +14,9 @@
         </button>
         <div id="navbarTogglerDemo02" class="navbar-collapse collapse">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <router-link to="/login" class="nav-link">Login</router-link>
+              <router-link to="/login" v-if="authenticated" @click.native="logout()" class="nav-link">Logout</router-link>
             </li>
             <li class="nav-item">
               <router-link to="/register" class="nav-link">Register</router-link>
@@ -29,9 +30,19 @@
 </template>
 
 <script>
-
 export default {
   name: 'App',
+  data() {
+    return {
+      authenticated: false
+    }
+  },
+  methods: {
+    logout() {
+      this.authenticated = false;
+      router.push('/login');
+    }
+  }
 };
 </script>
 
