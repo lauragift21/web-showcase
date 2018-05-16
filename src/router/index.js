@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import AppHome from '@/components/AppHome';
+import Home from '@/views/Home';
+import Website from '@/views/Website';
 import AppRegister from '@/components/AppRegister';
 import AppLogin from '@/components/AppLogin';
-import AppWebsite from '@/components/AppWebsite';
 
 Vue.use(Router);
 
@@ -12,7 +12,7 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: AppHome,
+      component: Home,
     },
     {
       path: '/register',
@@ -27,7 +27,7 @@ export default new Router({
     {
       path: '/websites',
       name: 'Website',
-      component: AppWebsite
+      component: Website
     }
   ],
 });

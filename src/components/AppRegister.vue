@@ -65,9 +65,6 @@ export default {
     register() {
       this.success = true;
       const url = 'https://mt-proc.herokuapp.com/register';
-      const auth = {
-        headers: { Authorization: 'Bearer {localStorage.token}' }
-      };
       console.log(this.email);
       console.log(this.password);
       axios
@@ -77,7 +74,6 @@ export default {
             email: this.email,
             password: this.password
           },
-          auth
         )
         .then((response) => {
           console.log(response);

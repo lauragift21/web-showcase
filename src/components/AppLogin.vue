@@ -81,8 +81,9 @@ export default {
             email: this.email,
             password: this.password
           })
-        .then((response) => {
-          console.log(response);
+        .then((res) => {
+          console.log(res);
+          localStorage.token = res.data.token;
         })
         .catch((error) => {
           console.error(error);
