@@ -10,42 +10,39 @@
       <div class="card">
         <div class="card-body">
           <p class="card-text text-center">
-            Awesome list of webpages
-             git@github.com:lauragift21/awesome-service-workers.gitgit@github.com:laur
-            agift21/awesome-service-workers.gitgit@github.com:l
-            auragift21/awesome-service-wor
-            kers.gitgit@github.com:lauragift21/awe
-            some-service-workers.gitur quas accusantium.
-            Sint est excepturi eius dolorem consequuntur molestiae por
-            ro tempora aliquam esse!
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+           nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+           in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+           nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+           sunt in culpa qui officia deserunt mollit anim id est laborum
           </p>
         </div>
       </div>
       <div class="card">
         <div class="card-body">
           <p class="card-text text-center">
-            Awesome list of webpages
-             git@github.com:lauragift21/awesome-service-workers.gitgit@github.com:laur
-            agift21/awesome-service-workers.gitgit@github.com:l
-            auragift21/awesome-service-wor
-            kers.gitgit@github.com:lauragift21/awe
-            some-service-workers.gitur quas accusantium.
-            Sint est excepturi eius dolorem consequuntur molestiae por
-            ro tempora aliquam esse!
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+           nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh
+           enderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ex
+           cepteur sint occaecat cupidatat non proident, sunt in culpa qui offi
+           cia deserunt mollit anim id est laborum
           </p>
         </div>
       </div>
       <div class="card">
         <div class="card-body">
           <p class="card-text text-center">
-            Awesome list of webpages
-             git@github.com:lauragift21/awesome-service-workers.gitgit@github.com:laur
-            agift21/awesome-service-workers.gitgit@github.com:l
-            auragift21/awesome-service-wor
-            kers.gitgit@github.com:lauragift21/awe
-            some-service-workers.gitur quas accusantium.
-            Sint est excepturi eius dolorem consequuntur molestiae por
-            ro tempora aliquam esse!
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius
+           mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+           veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat c
+            upidatat non proident, sunt in culpa qui officia deserunt mo
+            llit anim id est laborum
           </p>
         </div>
       </div>

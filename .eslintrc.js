@@ -59,5 +59,6 @@ module.exports = {
     'comma-dangle': 0,
     'semi': 1,
     'no-console': 0,
+    'no-unused-vars': 0,
   }
 };
