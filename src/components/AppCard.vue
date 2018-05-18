@@ -14,7 +14,7 @@
           <strong class="text-dark">
             {{ website.description}}
           </strong><br>
-          <a href="/" class="card-link">{{website.url}}</a>
+          <a href="/" class="badge alert-primary card-link">{{website.url}}</a>
         </div>
       </div>
     </div>
