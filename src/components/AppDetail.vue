@@ -2,10 +2,17 @@
   <div>
     <div class=" box d-flex justify-content-center flex-column">
       <div class="card shadow-lg bg-white">
+        <div v-if="loading" class="loader">
+          <img src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="loader">
+        </div>
       <p class="title display-4">
         {{websites.name}}
       </p>
-      <a :href="websites.url" class=" link card-link badge alert-primary">{{websites.url}}</a>
+      <a :href="websites.url"
+        target="_blank"
+        class="link card-link badge alert-primary">
+          {{websites.url}}
+        </a>
       <div class="text-center lead text text-default">
         {{websites.description}}
       </div>
@@ -24,6 +31,7 @@ export default {
   data() {
     return {
       websites: [],
+      loading: false
     };
   },
   created() {
@@ -75,5 +83,22 @@ margin: 0 20vw;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+  .box {
+    margin: 5vw;
+    margin-top: 0;
+  }
+  .card {
+    width: 90vw;
+    height: 50vh;
+  }
+  .link {
+    font-size: 16px;
+  }
+  .title {
+    font-size: 30px;
+    text-align: center;
+  }
 }
 </style>

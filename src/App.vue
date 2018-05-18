@@ -17,19 +17,19 @@
             <li class="nav-item">
               <router-link to="/login"
                 class="nav-link"
-                v-show="isLogged === true">
+                v-if="!isAuthenticated()">
                 Login
               </router-link>
               <router-link to="/"
                 class="nav-link"
-                v-if="isLogged === false"
-                @click="isAuthenticated">
+                @click.native="logout()"
+                v-if="isAuthenticated()">
                   Logout
               </router-link>
             </li>
             <li class="nav-item">
               <router-link to="/register"
-                v-if="isLogged === true"
+                v-if="!isAuthenticated()"
                 class="nav-link">
                 Register
               </router-link>
@@ -61,9 +61,16 @@ export default {
   },
   methods: {
     logout() {
-      localStorage.removeItem('token');
-      this.isLogged = this.isAuthenticated();
-      this.$router.push('/login');
+      const removeToken = localStorage.removeItem('token');
+      console.log(removeToken);
+      if (removeToken) {
+        return true;
+      }
+      return false;
+      // this.$router.push('/login');
+    },
+    removeToken() {
+      return localStorage.removeItem('token');
     },
     isAuthenticated() {
       const token = localStorage.getItem('token');
