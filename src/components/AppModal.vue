@@ -76,7 +76,12 @@
           </form>
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" @click="refresh" data-dismiss="modal">Close</button>
+          <button type="button"
+            class="btn btn-danger"
+            @click="refresh"
+            data-dismiss="modal">
+            Close
+          </button>
         </div>
       </div>
     </div>

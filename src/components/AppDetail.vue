@@ -1,12 +1,12 @@
 <template>
   <div>
-    <p ml-5>SHOWCASE DETAILS</p>
-    <div v-for="data in website" :key="data.id">
-      <h4>
-       Name:
-        {{ data.name}}
-      </h4>
+    <div class="card">
+      <h3 class="text-secondary">Showcase Details</h3>
+      <div v-for="(website, index) in websites" :key="website.id">
+        <p class="text-primary">  Name: {{ website.id}} {{ index }} </p>
+      </div>
     </div>
+
   </div>
 </template>
 
@@ -16,7 +16,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      website: []
+      websites: [],
     };
   },
   created() {
@@ -34,15 +34,25 @@ export default {
       this.loading = true;
       axios
         .get(URL, AUTH)
-        .then((res) => {
+        .then((response) => {
           this.loading = false;
-          this.website = res.data.data;
-          console.log(this.website);
+          this.websites = response.data.data;
+          console.log(this.websites);
         })
         .catch((err) => {
           console.log(err);
         });
     }
+
   }
 };
 </script>
+
+<style scoped>
+.card {
+  height: 91vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>

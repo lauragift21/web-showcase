@@ -60,7 +60,9 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import axios from 'axios';
+import EventBus from '../event-bus';
 
 export default {
   name: 'Login',
@@ -86,6 +88,7 @@ export default {
           this.success = true;
           console.log(res);
           localStorage.token = res.data.token;
+          EventBus.$emit('logged', 'user logged');
           // store token into localstorage
           const token = localStorage.getItem('token');
           // redirect user if successful
@@ -97,18 +100,8 @@ export default {
           console.error(error);
           localStorage.removeItem('token');
         });
-    },
-    logout() {
-      localStorage.removeItem('token');
-    },
-    isAuthenticated() {
-      const token = localStorage.getItem('token');
-      if (token) {
-        return true;
-      }
-      return false;
     }
-  }
+  },
 };
 </script>
 
