@@ -1,12 +1,19 @@
 <template>
   <div>
-    <div class="card">
-      <h3 class="text-secondary">Showcase Details</h3>
-      <div v-for="(website, index) in websites" :key="website.id">
-        <p class="text-primary">  Name: {{ website.id}} {{ index }} </p>
+    <div class=" box d-flex justify-content-center flex-column">
+      <div class="card shadow-lg bg-white">
+      <p class="title display-4">
+        {{websites.name}}
+      </p>
+      <a :href="websites.url" class=" link card-link badge alert-primary">{{websites.url}}</a>
+      <div class="text-center lead text text-default">
+        {{websites.description}}
       </div>
+      </div>
+      <a href="#/websites/">
+        <button type="button" class="btn btn-lg btn-dark mt-4">Go Back</button>
+      </a>
     </div>
-
   </div>
 </template>
 
@@ -43,14 +50,28 @@ export default {
           console.log(err);
         });
     }
-
   }
 };
 </script>
 
 <style scoped>
+.box {
+margin: 0 20vw;
+}
+.link {
+  font-size: 18px;
+}
+.text {
+  margin: 0 10px ;
+  padding: 20px;
+}
+.title {
+  text-transform: uppercase;
+}
 .card {
-  height: 91vh;
+  width: 60vw;
+  height: 50vh;
+  margin-top: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -17,17 +17,22 @@
             <li class="nav-item">
               <router-link to="/login"
                 class="nav-link"
-                v-show="!isAuthenticated">
+                v-show="isLogged === true">
                 Login
               </router-link>
-              <router-link to="/logout"
+              <router-link to="/"
                 class="nav-link"
-                v-show="isAuthenticated">
-                Logout
+                v-if="isLogged === false"
+                @click="isAuthenticated">
+                  Logout
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/register" class="nav-link">Register</router-link>
+              <router-link to="/register"
+                v-if="isLogged === true"
+                class="nav-link">
+                Register
+              </router-link>
             </li>
           </ul>
         </div>
@@ -38,11 +43,36 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import Applogin from './components/AppLogin';
+import EventBus from './event-bus';
 
 export default {
   name: 'App',
-  props: ['isAuthenticated'],
+  data() {
+    return {
+      isLogged: this.isAuthenticated()
+    };
+  },
+  created() {
+    EventBus.$on('logged', () => {
+      this.isLogged = this.isAuthenticated();
+    });
+  },
+  methods: {
+    logout() {
+      localStorage.removeItem('token');
+      this.isLogged = this.isAuthenticated();
+      this.$router.push('/login');
+    },
+    isAuthenticated() {
+      const token = localStorage.getItem('token');
+      if (token) {
+        return true;
+      }
+      return false;
+    }
+  }
 };
 </script>
 

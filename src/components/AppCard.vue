@@ -6,16 +6,16 @@
       <img src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="loader">
     </div>
     <div class="card-columns mx-3">
-      <div class="card mx-2" v-for="(website) in data"  :key="website.id">
+      <div class="card mx-2" v-for="website in data"  :key="website.id">
       <router-link class="link" :to="{name: 'detail', params: {id: website.id}}">
           <div class="card-header text-white bg-dark"> {{ website.name }}</div>
+          <div class="card-body card-text text-center">
+            <strong class="text-dark">
+              {{ website.description}}
+            </strong><br>
+            <a :href="website.url" class="badge alert-primary card-link">{{website.url}}</a>
+          </div>
         </router-link>
-        <div class="card-body card-text text-center">
-          <strong class="text-dark">
-            {{ website.description}}
-          </strong><br>
-          <a href="/" class="badge alert-primary card-link">{{website.url}}</a>
-        </div>
       </div>
     </div>
   </div>
@@ -23,6 +23,7 @@
 
 <script>
 import axios from 'axios';
+import AppDetail from './AppDetail';
 
 export default {
   name: 'Card',
