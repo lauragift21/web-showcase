@@ -6,6 +6,10 @@
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <b>Login successful!</b>
       </div>
+      <div class="alert alert-danger alert-dismissible fade show" v-if="error">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <b>Login Failed! Please Provide correct credentials</b>
+      </div>
         <label for="email">Email address:</label>
         <input
           type="email"
@@ -70,10 +74,7 @@ export default {
   },
   methods: {
     login() {
-      this.success = true;
       const url = 'https://mt-proc.herokuapp.com/login';
-      console.log(this.password);
-      console.log(this.email);
       axios
         .post(
           url,
@@ -82,13 +83,30 @@ export default {
             password: this.password
           })
         .then((res) => {
+          this.success = true;
           console.log(res);
           localStorage.token = res.data.token;
+          // store token into localstorage
+          const token = localStorage.getItem('token');
+          // redirect user if successful
+          this.$router.replace(this.$route.query.redirect || '/websites');
         })
         .catch((error) => {
+          // if request fails remove token from local storage
+          this.error = true;
           console.error(error);
+          localStorage.removeItem('token');
         });
-      this.$router.replace(this.$route.query.redirect || '/websites');
+    },
+    logout() {
+      localStorage.removeItem('token');
+    },
+    isAuthenticated() {
+      const token = localStorage.getItem('token');
+      if (token) {
+        return true;
+      }
+      return false;
     }
   }
 };
