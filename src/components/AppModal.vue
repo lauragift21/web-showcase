@@ -128,7 +128,8 @@ export default {
         });
     },
     refresh() {
-      window.location.reload();
+      // window.location.reload();
+      this.$router.go('/websites');
     }
   },
 };
