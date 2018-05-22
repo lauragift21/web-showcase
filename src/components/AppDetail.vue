@@ -17,7 +17,7 @@
         {{websites.description}}
       </div>
       </div>
-      <a href="/websites/">
+      <a href="#/websites">
         <button type="button" class="btn btn-lg btn-dark mt-4">Go Back</button>
       </a>
     </div>
